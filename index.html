@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceBook Login Form</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <p>Facebook helps you connect and share with the people in your life.</p>
+        </div>
+        <div class="right">
+            <form>
+            <h1 class="root">Sign Up</h1>
+            <h2 class="root"> It's free and anyone can join</h2><br>
+            <table>
+                <tr>
+                    <td>Enter Name :</td>
+                    <td><input type="text"  id="t1" class="tb" /></td>
+                    </tr>
+                    <tr>
+                    <td >Enter Email ID :</td>
+                    <td><input type="text"  id="t2" class="tb" /></td>
+                    </tr>
+                    <tr>
+                    <td >Enter Username :</td>
+                    <td><input type="text"  id="t3" class="tb" /></td>
+                    </tr>
+                    <tr>
+                    <td >Enter Password :</td>
+                    <td><input type="password"  id="t4" class="tb" /></td>
+                    </tr>
+                    <tr>
+                    <td >Confirm Password :</td>
+                    <td><input type="password"  id="t5" class="tb" /></td>
+                    </tr>
+                    <tr>
+                    <td></td>
+                    <td>
+                    </tr>
+                    <tr>
+                    <td><label for="phno">Ph No:</label></td>
+                    <td>
+                    <input name="phno" id="phno" type="text" pattern="[1-9]{1}[0-9]{9}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="sex-select">I am:</label></td>
+                    <td>
+                    <select name="sex-select" id="sex-select"><br><br>
+                    <option value="0">Select Sex:</option>
+                    <option value="1">Female</option>
+                    <option value="2">Male</option>
+                    </select>
+                    </td>
+                    <td></td>
+                </tr>
+              <tr>
+            <td><label>Birthday:</label></td>
+           <td>
+           <select name="month" id="month">
+            <option value="0">Month</option>
+            <option value="1">January</option>
+            <option value="2">february</option>
+            <option value="0">March</option>
+            <option value="0">April</option>
+            <option value="0">May</option>
+            <option value="0">June</option>
+            <option value="0">July</option>
+            <option value="0">August</option>
+            <option value="0">September</option>
+            <option value="0">October</option>
+            <option value="0">November</option>
+            <option value="0">December</option>
+           </select>
+        
+        <select name="day" id="day">
+            <option value="0">Day</option>  
+            <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> <option value="5">5</option>
+            <option value="6">6</option> <option value="7">7</option> <option value="8">8</option> <option value="9">9</option> <option value="10">10</option> <option value="11">11</option>
+            <option value="12">12</option> <option value="13">13</option> <option value="14">14</option> <option value="15">15</option> 
+            <option value="16">16</option> <option value="17">17</option> <option value="18">18</option> <option value="19">20</option>
+            <option value="21">21</option> <option value="22">23</option> <option value="24">24</option> <option value="25">25</option> 
+            <option value="26">26</option> <option value="27">27</option> <option value="28">28</option> <option value="29">29</option> 
+            <option value="30">30</option> <option value="31">31</option>
+       </select>
+        
+        <select name="year" id="year">
+            <option value="0">Year</option>  
+            <option value="1">1990</option> <option value="2">1991</option> <option value="3">1992</option> <option value="4">1993</option> <option value="5">1994</option> <option value="6">1995</option>
+            <option value="7">1996</option> <option value="8">1997</option> <option value="9">1998</option> <option value="10">1999</option> <option value="11">2000</option> <option value="12">2001</option> <option value="13">2002</option>
+            <option value="14">2003</option> <option value="15">2004</option> <option value="16">2005</option> 
+        </select>
+        </td>
+        </tr>
+</table>
+<br><br>
+<input type="submit" value="Sign Up" class="btn" onclick="registration()" /></td>
+    
+</form>
+ <div class="footer">
+    <p><b>Create a Page</b> for a celebrity, band or business.</p>
+    &copy; Facebook 2017.
+</div>
+</form> 
+
+</div>
+</div>
+</div>
+</div>
+
+<script>
+    function registration()
+	{
+		var name= document.getElementById("t1").value;
+		var email= document.getElementById("t2").value;
+		var uname= document.getElementById("t3").value;
+		var pwd= document.getElementById("t4").value;			
+		var cpwd= document.getElementById("t5").value;
+		
+		var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+		var letters = /^[A-Za-z]+$/;
+		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+		if(name=='')
+		{
+			alert('Please enter your name');
+		}
+		else if(!letters.test(name))
+		{
+			alert('Name field required only alphabet characters');
+		}
+		else if(email=='')
+		{
+			alert('Please enter your user email id');
+		}
+		else if (!filter.test(email))
+		{
+			alert('Invalid email');
+		}
+		else if(uname=='')
+		{
+			alert('Please enter the user name.');
+		}
+		else if(!letters.test(uname))
+		{
+			alert('User name field required only alphabet characters');
+		}
+		else if(pwd=='')
+		{
+			alert('Please enter Password');
+		}
+		else if(cpwd=='')
+		{
+			alert('Enter Confirm Password');
+		}
+		else if(!pwd_expression.test(pwd))
+		{
+			alert ('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
+		}
+		else if(pwd != cpwd)
+		{
+			alert ('Password not Matched');
+		}
+		else if(document.getElementById("t5").value.length < 6)
+		{
+			alert ('Password minimum length is 6');
+		}
+		else if(document.getElementById("t5").value.length > 12)
+		{
+			alert ('Password max length is 12');
+		}
+		else
+		{				                            
+               alert('Thank You for Login & You are Redirecting to Campuslife Website');
+		}
+	}
+</script>
+</body>
+</html>
